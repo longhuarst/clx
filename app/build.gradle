@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyPassword 'luhuichen'
+            storeFile file('/Users/luhuichen/lhc/work/zhuang/androidkey/android.keystore')
+            storePassword 'luhuichen'
+            keyAlias 'android.keystore'
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.clx.luhuichen.clx"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+//        pickFirst 'lib/armeabi/libAMapSDK_MAP_v6_9_0.so'
+//        pickFirst 'lib/arm64-v8a/libAMapSDK_MAP_v6_9_0.so'
+//        pickFirst 'lib/armeabi-v7a/libAMapSDK_MAP_v6_9_0.so'
+//        pickFirst 'lib/x86/libAMapSDK_MAP_v6_9_0.so'
+//        pickFirst 'lib/x86_64/libAMapSDK_MAP_v6_9_0.so'
+//        pickFirst 'assets/ap1.data'
+//        pickFirst 'assets/marker_gps_no_sharing.png'
+//        pickFirst 'assets/map_assets/roadarrow.data'
+//        pickFirst 'assets/map_assets/icons_23_14_1514285400.data'
+//        pickFirst 'assets/map_assets/tmc_n_allinone.data'
+//        pickFirst 'assets/map_assets/style_4_14_1537272184.data'
+//        pickFirst 'assets/location_pressed.png'
+//        pickFirst 'assets/map_assets/3dportrait.xml'
+//        pickFirst 'assets/map_assets/icons_5_14_1527583408.data'
+//        pickFirst 'assets/amap_sdk_lineDashTexture_circle.png'
+//        pickFirst 'assets/amap_sdk_shaders/point.glsl'
+//        pickFirst 'assets/eagle_eye_night.png'
+//        pickFirst 'assets/map_assets/icons_1_14_1533801322.data'
+//        pickFirst 'assets/amap_sdk_shaders/texture_normal.glsl'
+//        pickFirst 'assets/map_assets/icons_7_14_1533801341.data'
+//        pickFirst 'assets/hud.png'
+//        pickFirst 'assets/RED.png'
+//        pickFirst 'assets/infowindow_bg.9.png'
+//        pickFirst 'assets/YELLOW.png'
+//        pickFirst 'assets/map_custom/particle/haze.png'
+//        pickFirst 'assets/map_assets/tbl_n.data'
+//        pickFirst 'assets/map_assets/icons_4_14_1527477043.data'
+//        pickFirst 'assets/map_custom/particle/snow.png'
+//        pickFirst 'assets/*'
+//        pickFirst 'assets/amap_sdk_shaders/texture.glsl'
+//        pickFirst '*'
+//        pickFirst 'assets/arrow/arrow_line_shadow.png'
+//        pickFirst 'assets/ae/res.zip'
+//
+//        pickFirst 'assets/map_assets/bktile.data'
+
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //高德地图
+    //    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //3D地图
+    compile 'com.amap.api:3dmap:latest.integration'
+    //    //2D地图
+    compile 'com.amap.api:map2d:latest.integration'
+    //    //导航
+    //    compile 'com.amap.api:navi-3dmap:latest.integration'   //这个库不要加，加入后会有很有问题
+    //    //搜索
+    compile 'com.amap.api:search:latest.integration'
+    //    //定位
+    compile 'com.amap.api:location:latest.integration'
+
+
+
+
+
+
+    //netty
+    // https://mvnrepository.com/artifact/io.netty/netty-all
+    compile group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha2'
+
+
+
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.0.0-RC2'
+
+
+
+
+
+
+}
